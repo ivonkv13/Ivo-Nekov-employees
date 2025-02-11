@@ -1,0 +1,17 @@
+.vs
+.vscode
+/ivo-nekov-employees.Server/bin
+/ivo-nekov-employees.Server/obj
+/ivo-nekov-employees.Server/Debug
+/ivo-nekov-employees.Server/Release
+
+/ivo-nekov-employees.Server/.vs
+/ivo-nekov-employees.Server/.user
+/ivo-nekov-employees.Server/.idea
+/ivo-nekov-employees.Server/.vscode
+
+/ivo-nekov-employees.client/dist
+/ivo-nekov-employees.client/out-tsc
+/ivo-nekov-employees.client/dist
+/ivo-nekov-employees.client/obj/Debug
+

@@ -1,0 +1,14 @@
+.upload-container {
+    width: 400px;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+
+  .file-input-btn {
+    margin-top: 10px;
+  }
