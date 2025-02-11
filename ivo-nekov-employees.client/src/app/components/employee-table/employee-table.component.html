@@ -1,0 +1,38 @@
+<mat-form-field appearance="outline" class="dropdown-container">
+    <mat-label>Select File</mat-label>
+    <mat-select [(value)]="selectedFile" (selectionChange)="onFileSelected($event.value)">
+        <mat-option *ngFor="let file of files" [value]="file">{{ file }}</mat-option>
+    </mat-select>
+</mat-form-field>
+
+<div class="table-container">
+    
+    <p *ngIf="isLoading" class="loading-text">Loading employee pairs...</p>
+
+    <p *ngIf="!isLoading && !hasRecords" class="no-records">
+        No records found. Please upload a file.
+    </p>
+
+    <div class="table-wrapper" *ngIf="!isLoading && hasRecords">
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Employee 1</th>
+                    <th>Employee 2</th>
+                    <th>Project ID</th>
+                    <th>Overlap Days</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let pair of employeePairs$ | async">
+                    <td>{{ pair.employee1Id }}</td>
+                    <td>{{ pair.employee2Id }}</td>
+                    <td>{{ pair.projectId }}</td>
+                    <td>{{ pair.overlapDays }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p>THE TABLE IS NOW IMPLEMENTED WITH PLAIN HTML. OPTIMALLY CAN BE DONE WITH MTARIAL TABLE COMPONENT.</p>
+    <p>THE TABLE IS NOT PAGINATED, NOR THE ENDPOINT ALLOWS PAGINATED REQUESTS. THIS CAN BE FURHTER IMPROVED.</p>
+</div>

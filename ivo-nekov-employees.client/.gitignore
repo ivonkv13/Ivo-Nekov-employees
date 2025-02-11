@@ -1,0 +1,21 @@
+# Ignore Angular build artifacts
+/dist
+/out-tsc
+/.angular
+
+# Ignore environment files (avoid pushing secrets)
+src/environments/environment*.ts
+
+# Ignore dependency folders
+/node_modules
+/.npm
+
+# Ignore logs, cache, and temporary files
+*.log
+*.bak
+.DS_Store
+/.vscode
+/.idea
+/.cache
+/.temp
+package-lock.json

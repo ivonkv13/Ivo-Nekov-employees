@@ -1,0 +1,24 @@
+<mat-card class="upload-container">
+    <mat-toolbar color="primary">Upload File</mat-toolbar>
+
+    <div class="file-input-container">
+        <input type="file" (change)="onFileSelected($event)" accept=".csv" id="fileInput" hidden>
+        <button class="file-input-btn" [hidden]="selectedFile" mat-raised-button color="primary" (click)="triggerFileInput()">
+            <mat-icon>attach_file</mat-icon> Choose File
+        </button>
+        <span *ngIf="selectedFile">{{ selectedFile.name }}</span>
+    </div>
+
+    <button [hidden]="!selectedFile || uploadProgress === 100" [disabled]="!selectedFile" mat-raised-button color="accent" (click)="uploadFile()" >
+        <mat-icon>cloud_upload</mat-icon> Upload
+    </button>
+
+    <mat-progress-bar *ngIf="uploadProgress > 0" mode="determinate" [value]="uploadProgress"></mat-progress-bar>
+    <div *ngIf="uploadProgress === 100">
+        <p>File uploaded successfully!</p>
+        <button mat-raised-button [title]="buttonToolTip" (click)="clearProgress()" >
+            <mat-icon>cached</mat-icon> Clear
+        </button>
+        <p>{{buttonToolTip}}</p>
+    </div>
+</mat-card>

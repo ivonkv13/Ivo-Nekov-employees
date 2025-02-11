@@ -1,0 +1,44 @@
+.table-container {
+    width: 100%;
+    max-width: 900px;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.table-wrapper {
+    overflow-y: auto;
+    height: 100%;
+    border: 1px solid #ccc;
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.styled-table th,
+.styled-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+}
+
+.styled-table thead {
+    background-color: #1976d2;
+    color: white;
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.styled-table tbody {
+    overflow-y: auto;
+}
+
+.dropdown-container {
+    margin-bottom: 15px;
+    width: 30vw;
+  }
+  
